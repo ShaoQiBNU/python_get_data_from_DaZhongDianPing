@@ -148,6 +148,7 @@ def get_aim_info(aim_url,page,score_exchange):
             id=id+1
 ```
 > 为了自动爬取所有页的数据，设置函数获取最多页数，从而实现自动翻页，代码如下：
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/6.png)
 ```python
 ############# get maximum page ################
 def get_max_page(aim_url):
