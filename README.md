@@ -81,6 +81,7 @@ def get_html(url):
 
 ## (四) 数据爬取
 > 通过BeautifulSoup解析得到html页面内容，为了获取商家的相关信息，可以通过标签定位得到信息。具体如下：
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/5.png)
 
 ```python
 ############# get aim info ################
