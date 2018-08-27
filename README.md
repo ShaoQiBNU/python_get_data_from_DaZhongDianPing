@@ -33,17 +33,21 @@ import pandas as pd
 
 ## (二) url组合
 
-> 进入大众点评官网，网址为：http://www.dianping.com。当把城市切换到北京时，我们观察一下url的变化，https://www.dianping.com/beijing，beijing代表城市；当输入query：美食 时，url变化为：https://www.dianping.com/search/keyword/2/0_美食，'/search/keyword’代表搜索关键词的路径，2代表城市编号，’0\_美食’代表搜索词；美食页面有多个商家，对其进行翻页，url变化为：http://www.dianping.com/search/keyword/2/0_美食/p2?aid=92020785%2C102284990&cpt=92020785%2C102284990，p2代表的'page 2’，也就是第二页，后面的?aid=92020785%2C102284990&cpt=92020785%2C102284990属于query string，可以忽略，一般是用来标记网页自身的一些信息，只要改变“p”后面所带的数字，就能实现翻页的效果。
->
+> 进入大众点评官网，网址为：http://www.dianping.com. 当把城市切换到北京时，我们观察一下url的变化，https://www.dianping.com/beijing. ，beijing代表城市；当输入query：美食 时，url变化为：https://www.dianping.com/search/keyword/2/0_美食. ，'/search/keyword’代表搜索关键词的路径，2代表城市编号，’0\_美食’代表搜索词；美食页面有多个商家，对其进行翻页，url变化为：http://www.dianping.com/search/keyword/2/0_美食/p2?aid=92020785%2C102284990&cpt=92020785%2C102284990. ，p2代表的'page 2’，也就是第二页，后面的?aid=92020785%2C102284990&cpt=92020785%2C102284990属于query string，可以忽略，一般是用来标记网页自身的一些信息，只要改变“p”后面所带的数字，就能实现翻页的效果。
+
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/1.png)
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/2.png)
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/3.png)
+
 > 所以如果想搜索任意的一个词，那么在地址栏里按照如下的格式输入即可：
->
 > **协议（http://） + 域名（www.dianping.com）+ 路径（/search/keyword） + 前缀（/0_） + 关键词（美食） + 页数 （/p） + 具体页数**
 
 ## (三) 伪装头设置
 
 > 由于网站均有反爬机制，所以为了避免爬取失败，需要添加伪装头headers，具体获取方法如下：
->
 > 页面右击 ——> 检查 ——> 选择NetWork ——> 点击clear ——> 然后重新刷新 ——> 选择第一个，进入，点击Headers，获取参数，如下：
+
+![image](https://github.com/ShaoQiBNU/python_get_data_from_DaZhongDianPing/blob/master/images/4.png)
 
 ```python
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36',
